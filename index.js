@@ -15,12 +15,12 @@ app.get('/update', (req, res) => {
 })
 
 app.post('/update', (req, res) => {
+    console.log(req.body)
     res.redirect('success')
 })
 
 app.get('/success', (req, res) => {
     res.render('success')
-    
 })
 
 app.listen(3000, () => {
