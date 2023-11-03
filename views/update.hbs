@@ -1,45 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="/static/update.css">
     <title>Update Stock</title>
 </head>
+
 <body>
-     <header>
+    <header>
         <h1>อัปเดตสต๊อก</h1>
     </header>
+    <div class="button-container">
+        <button type="button" onclick="addRow()">เพิ่มรายการ</button>
+    </div>
     <div class="form-container">
-        <form action="" method="post">
-            <select name="size" id="">
-                <option value="null" disabled selected>เลือกไซส์</option>
-                <option value="4*6">4*6</option>
-                <option value="5*7">5*7</option>
-                <option value="6*8">6*8</option>
-                <option value="8*10">8*10</option>
-                <option value="8*12">8*12</option>
-                <option value="8*20">8*20</option>
-                <option value="10*12">10*12</option>
-                <option value="10*15">10*15</option>
-                <option value="12*15">12*15</option>
-                <option value="12*18">12*18</option>
-                <option value="15*20">15*20</option>
-                <option value="15*21">15*21</option>
-                <option value="16*20">16*20</option>
-                <option value="10*27">10*27</option>
-                <option value="12*27">12*27</option>
-                <option value="A4">A4</option>
-            </select>
-            <select name="action" id="">
-
-            </select>
-            <input type="number">
+        <form action="update" method="post">
+            <div id="form">
+                <div class="form-row" id="formRow1">
+                    <select name="size" id="inputSize">
+                        <option value="null" disabled selected>เลือกไซส์</option>
+                        <option value="4*6">4*6</option>
+                        <option value="5*7">5*7</option>
+                        <option value="6*8">6*8</option>
+                        <option value="8*10">8*10</option>
+                        <option value="8*12">8*12</option>
+                        <option value="8*20">8*20</option>
+                        <option value="10*12">10*12</option>
+                        <option value="10*15">10*15</option>
+                        <option value="12*15">12*15</option>
+                        <option value="12*18">12*18</option>
+                        <option value="15*20">15*20</option>
+                        <option value="15*21">15*21</option>
+                        <option value="16*20">16*20</option>
+                        <option value="10*27">10*27</option>
+                        <option value="12*27">12*27</option>
+                        <option value="A4">A4</option>
+                    </select>
+                    <select name="action" id="action">
+                        <option value="null" disabled selected>ทำอะไร</option>
+                        <option value="cut">ตัด</option>
+                        <option value="wash">ล้าง</option>
+                        <option value="sell">ขาย</option>
+                    </select>
+                    <input type="number" name="quantity" id="quantity">
+                    <button type="button" onclick="deleteRow(1)">ลบ</button>
+                </div>
+            </div>
+            <div></div>
+            <button type="submit">อัปเดตรายการ</button>
         </form>
     </div>
-    
+    <script src="/static/update.js"></script>
 </body>
 </html>
