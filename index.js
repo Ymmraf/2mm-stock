@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const hbs = require('hbs')
 const { MongoClient } = require("mongodb");
-const uri = "mongodb+srv://ymmraf:132542@2mm-stock.bauiper.mongodb.net/"
+const uri = process.env.MONGODB_URI || "mongodb://localhost:27017/"
 const PORT = process.env.PORT || 8000
 
 app.set('view engine', 'hbs');
