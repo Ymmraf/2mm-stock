@@ -9,38 +9,38 @@ app.set('view engine', 'hbs');
 app.use('/static', express.static('static'))
 app.use(express.urlencoded({ extended: true }))
 
-// app.get('/', (req, res) => {
-//     const client = new MongoClient(uri);
-//     async function run() {
-//         try {
-//             await client.connect();
-//             const db = client.db("2mm-stock");
-//             const coll = db.collection("stock");
-//             const cursor = coll.find({})
-//             const stockData = await cursor.toArray()
+app.get('/', (req, res) => {
+    const client = new MongoClient(uri);
+    async function run() {
+        try {
+            await client.connect();
+            const db = client.db("2mm-stock");
+            const coll = db.collection("stock");
+            const cursor = coll.find({})
+            const stockData = await cursor.toArray()
 
-//             const counter = db.collection('counter')
-//             const counterCursor = await counter.find({})
-//             const counterData = await counterCursor.toArray()
-//             let counterNumber = counterData[0].counter
+            const counter = db.collection('counter')
+            const counterCursor = await counter.find({})
+            const counterData = await counterCursor.toArray()
+            let counterNumber = counterData[0].counter
 
-//             const historyColl = db.collection("update-history")
-//             const historyCursor = await historyColl.find({updateID : counterNumber})
-//             const historyData = await historyCursor.toArray()
-//             const latestName = historyData[0].name
-//             const latestTime = historyData[0].timeField
-//             const latestUpdate = latestName + " " + latestTime
-//             res.render('index', { stockData, latestUpdate })
-//         } finally {
-//             await client.close();
-//         }
-//     }
-//     run().catch(console.dir);
-// })
-
-app.get('/', (req,res) => {
-    res.render('index')
+            const historyColl = db.collection("update-history")
+            const historyCursor = await historyColl.find({updateID : counterNumber})
+            const historyData = await historyCursor.toArray()
+            const latestName = historyData[0].name
+            const latestTime = historyData[0].timeField
+            const latestUpdate = latestName + " " + latestTime
+            res.render('index', { stockData, latestUpdate })
+        } finally {
+            await client.close();
+        }
+    }
+    run().catch(console.dir);
 })
+
+// app.get('/', (req,res) => {
+//     res.render('index')
+// })
 
 app.get('/update', (req, res) => {
     res.render('update')
