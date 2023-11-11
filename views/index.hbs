@@ -13,7 +13,7 @@
     <header>
         <h1>สต๊อก กระจกกรอบรูป</h1>
     </header>
-    <p class="latest-update">อัปเดตล่าสุด : </p>
+    <p class="latest-update">อัปเดตล่าสุด : {{ latestUpdate }}</p>
     <div class="table-container">
         <table>
             <thead>
@@ -24,91 +24,18 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>4*6</td>
-                    <td>100</td>
-                    <td>200</td>
-                </tr>
-                <tr>
-                    <td>5*7</td>
-                    <td>100</td>
-                    <td>200</td>
-                </tr>
-                <tr>
-                    <td>6*8</td>
-                    <td>100</td>
-                    <td>200</td>
-                </tr>
-                <tr>
-                    <td>8*10</td>
-                    <td>100</td>
-                    <td>200</td>
-                </tr>
-                <tr>
-                    <td>8*12</td>
-                    <td>100</td>
-                    <td>200</td>
-                </tr>
-                <tr>
-                    <td>8*20</td>
-                    <td>100</td>
-                    <td>200</td>
-                </tr>
-                <tr>
-                    <td>10*12</td>
-                    <td>100</td>
-                    <td>200</td>
-                </tr>
-                <tr>
-                    <td>10*15</td>
-                    <td>100</td>
-                    <td>200</td>
-                </tr>
-                <tr>
-                    <td>12*15</td>
-                    <td>100</td>
-                    <td>200</td>
-                </tr>
-                <tr>
-                    <td>12*18</td>
-                    <td>100</td>
-                    <td>200</td>
-                </tr>
-                <tr>
-                    <td>15*20</td>
-                    <td>100</td>
-                    <td>200</td>
-                </tr>
-                <tr>
-                    <td>15*21</td>
-                    <td>100</td>
-                    <td>200</td>
-                </tr>
-                <tr>
-                    <td>16*20</td>
-                    <td>100</td>
-                    <td>200</td>
-                </tr>
-                <tr>
-                    <td>10*27</td>
-                    <td>100</td>
-                    <td>200</td>
-                </tr>
-                <tr>
-                    <td>12*27</td>
-                    <td>100</td>
-                    <td>200</td>
-                </tr>
-                <tr>
-                    <td>A4</td>
-                    <td>100</td>
-                    <td>200</td>
-                </tr>
+                {{#each stockData}}
+                    <tr>
+                        <td>{{size}}</td>
+                        <td>{{cut}}</td>
+                        <td>{{ready}}</td>
+                    </tr>
+                {{/each}}
             </tbody>
         </table>
     </div>
     <div class="button-container">
-        <a href="#" class="produce-record">ประวัติการอัปเดต</a>
+        {{!-- <a href="/history" class="produce-record">ประวัติการอัปเดต</a> --}}
         <a href="/update" class="update-stock">อัปเดตสต๊อก</a>
     </div>
 </body>

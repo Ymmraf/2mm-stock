@@ -41,6 +41,14 @@ form button {
     border-radius: 5px;
 }
 
+.name-container {
+    margin: 16px 0px;
+}
+
+.name-container .name {
+    width: 100%;
+}
+
 .form-row {
     display: flex;
     justify-content: space-between;

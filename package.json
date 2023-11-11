@@ -10,8 +10,11 @@
   "author": "pheranat",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "hbs": "^4.2.0",
-    "nodemon": "^3.0.1"
+    "mongodb": "^6.2.0",
+    "nodemon": "^3.0.1",
+    "punycode": "^2.3.1"
   }
 }

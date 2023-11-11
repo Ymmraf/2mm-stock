@@ -16,15 +16,19 @@
     <header>
         <h1>อัปเดตสต๊อก</h1>
     </header>
+
     <div class="button-container">
         <button type="button" onclick="addRow()">เพิ่มรายการ</button>
     </div>
     <div class="form-container">
-        <form action="update" method="post">
-            <div id="form">
+        <form action="update" method="post" id="form">
+            <div id="inputContainer">
+                <div class="name-container">
+                    <input type="text" placeholder="ชื่อผู้บันทึก" class="name" id="name" name="name">
+                </div>
                 <div class="form-row" id="formRow1">
                     <select name="size" id="inputSize">
-                        <option value="null" disabled selected>เลือกไซส์</option>
+                        <option value="" disabled selected>ขนาด</option>
                         <option value="4*6">4*6</option>
                         <option value="5*7">5*7</option>
                         <option value="6*8">6*8</option>
@@ -43,20 +47,23 @@
                         <option value="A4">A4</option>
                     </select>
                     <select name="action" id="action">
-                        <option value="null" disabled selected>ทำอะไร</option>
+                        <option value="" disabled selected>ทำอะไร</option>
                         <option value="cut">ตัด</option>
                         <option value="wash">ล้าง</option>
                         <option value="sell">ขาย</option>
+                        <option value="editcut">แก้สต๊อกตัด</option>
+                        <option value="editready">แก้สต๊อกพร้อมส่ง</option>
                     </select>
                     <input type="number" name="quantity" id="quantity">
                     <button type="button" onclick="deleteRow(1)">ลบ</button>
                 </div>
             </div>
             <div class="submit-button-container">
-                <button type="submit">อัปเดตรายการ</button>
+                <button type="button" onclick="check()">อัปเดตรายการ</button>
             </div>
         </form>
     </div>
     <script src="/static/update.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
