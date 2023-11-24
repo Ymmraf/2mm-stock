@@ -22,6 +22,8 @@ function addRow() {
             <option value="10*27">10*27</option>
             <option value="12*27">12*27</option>
             <option value="A4">A4</option>
+            <option value="12*16">12*16</option>
+            <option value="11*27">11*27</option>
         </select>
         <select name="action" id="action">
             <option value="" disabled selected>ทำอะไร</option>

@@ -38,10 +38,6 @@ app.get('/', (req, res) => {
     run().catch(console.dir);
 })
 
-// app.get('/', (req,res) => {
-//     res.render('index')
-// })
-
 app.get('/update', (req, res) => {
     res.render('update')
 })
